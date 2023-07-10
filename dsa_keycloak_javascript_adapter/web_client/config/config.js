@@ -1,0 +1,7 @@
+export const CONFIG = {
+    AUTHORIZATION_BROKER_HOST: process.env.AUTHORIZATION_BROKER_HOST,
+    DSA_HOST: process.env.DSA_HOST,
+    KEYCLOAK_HOST: process.env.KEYCLOAK_HOST,
+    KEYCLOAK_CLIENTID: process.env.KEYCLOAK_CLIENTID,
+    KEYCLOAK_REALM: process.env.KEYCLOAK_REALM,
+};
