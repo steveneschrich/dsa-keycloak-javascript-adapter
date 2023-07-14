@@ -3,7 +3,9 @@ import { CONFIG } from "./config";
 
 export function inIframe() {
     try {
-        return window.self !== window.top;
+        if (!window.top.girder) {
+             return window.self !== window.top;
+        }
     } catch (e) {
         return true;
     }
@@ -29,7 +31,7 @@ export function redirectToCollection() {
         }).done((resp) => {
             const foundFolder = resp.find(
                 ({ name, parentCollection }) =>
-                    name === caseId && parentCollection === "collection"
+                    name === caseId
             );
 
             if (foundFolder) {
@@ -41,7 +43,7 @@ export function redirectToCollection() {
                     },
                 }).done((resp) => {
                     if (resp.length > 1) {
-                        redirectUrl = `${CONFIG.DSA_HOST}/histomics#?image=${resp[0]._id}`;
+                        redirectUrl = `${window.location.origin}/histomics#?image=${resp[0]._id}`;
                     }
 
                     $(location).prop("href", redirectUrl);

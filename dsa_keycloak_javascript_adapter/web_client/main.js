@@ -23,9 +23,10 @@ if (!currentUser) {
 }
 
 if (inIframe()) {
-    setOrGetcaseIDSessionStorage();
-
-    if (currentUser !== undefined) {
-        redirectToCollection();
+    if (!window.frameElement) {
+        setOrGetcaseIDSessionStorage();
+        if (currentUser !== undefined) {
+            redirectToCollection();
+        }
     }
 }

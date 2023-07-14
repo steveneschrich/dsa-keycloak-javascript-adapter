@@ -25,7 +25,7 @@ export function keyckloakSilentSSO() {
         onLoad: "login-required",
         checkLoginIframe: false,
         enableLogging: true,
-        redirectUri: `${CONFIG.DSA_HOST}/#redirect/`,
+        redirectUri: `${window.location.origin}/#redirect/`,
     };
 
     keycloak
