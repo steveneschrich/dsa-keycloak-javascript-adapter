@@ -70,6 +70,12 @@ If you want to watch the changes when you are coding use the following command:
 > *This command will listen to any change that you do in the web_client .js files and build & serve again the project without re-installing node modules.*
 
 # Deployment
+**0.** Go to the the container bash and go to the `opt` folder:
+```bash
+docker exec -it <container name> /bin/bash
+cd ..
+```
+
 **1.** Clone the repository into the container:
 ```bash
 git clone https://github.com/steveneschrich/dsa-keycloak-javascript-adapter.git
@@ -97,3 +103,4 @@ pip install .
 
 ## Deployment notes:
 1. You'll need to have a OpenID client in `keycloak`, for example if you are using `cbioportal` you'll need to have 2 clients one with SAML configuration named `cbioportal` and another with OpenID configuration named `cbioportal_api`
+2. You'll need to have a admin user in both `dsa` and `keycloak` (with realm manager role)
