@@ -2,13 +2,11 @@ import { validateSession, keyckloakSilentSSO } from "./keycloak-validator";
 import "./routes";
 import "./views/HeaderUserView";
 import {
-    deleteCookie,
     getCookie,
     inIframe,
     redirectToCollection,
     setOrGetcaseIDSessionStorage,
 } from "./utils";
-import events from "@girder/core/events";
 
 console.log("Loaded dsa-keycloak-javascript-adapter!");
 
