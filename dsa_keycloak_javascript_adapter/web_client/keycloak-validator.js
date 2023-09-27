@@ -11,7 +11,7 @@ import {
     redirectToCollection,
     setCookie,
 } from "./utils";
-import { CONFIG } from "./config/config";
+import { CONFIG } from "./config";
 
 export function keyckloakSilentSSO() {
     const keycloakConfig = {
