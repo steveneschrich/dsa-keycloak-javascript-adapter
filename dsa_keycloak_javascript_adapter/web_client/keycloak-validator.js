@@ -31,14 +31,14 @@ export function keyckloakSilentSSO() {
     keycloak
         .init(keycloakInitOptions)
         .then((authenticated) => {
-            const name = keycloak.idTokenParsed.name.split(", ");
+            const name = keycloak.idTokenParsed.name.split(" ");
             const userData = {
                 login: `${keycloak.idTokenParsed.email.split("@")[0]}`,
                 keycloakSessionId: `${keycloak.sessionId}`,
                 keycloakUsername: `${keycloak.idTokenParsed.preferred_username}`,
                 email: `${keycloak.idTokenParsed.email}`,
-                lastName: `${name[0]}`,
-                firstName: `${name[1]}`,
+                firstName: `${name[0]}`,
+                lastName: `${name[1]}`,
             };
 
             const config = {
